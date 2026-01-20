@@ -1,0 +1,36 @@
+@use "sass:math";
+
+$maxWidth: 1152;
+$minWidth: 320;
+$baseFontSize: 16;
+
+@function px-number($value) {
+  @if math.is-unitless($value) {
+    @return $value;
+  }
+  @if unit($value) == "px" {
+    @return math.div($value, 1px);
+  }
+  @error "expects px values, got `#{$value}`.";
+}
+
+@function px-to-rem($value, $base: $baseFontSize) {
+  $px: px-number($value);
+  @return math.div($px, $base) * 1rem;
+}
+
+@mixin adaptiv-font($pcSize, $mobSize, $base: $baseFontSize) {
+  $pc: px-number($pcSize);
+  $mob: px-number($mobSize);
+  
+  $minRem: math.div($mob, $base);
+  $maxRem: math.div($pc, $base);
+  
+
+  $slope: math.div($pc - $mob, $maxWidth - $minWidth);
+  $slopeVw: $slope * 100;
+  $intercept: $mob - $slope * $minWidth;
+  $interceptRem: math.div($intercept, $base);
+  
+  font-size: clamp(#{$minRem}rem, #{$interceptRem}rem + #{$slopeVw}vw, #{$maxRem}rem);
+}

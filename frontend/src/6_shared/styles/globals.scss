@@ -1,0 +1,14 @@
+@use '@shared/styles/variables.scss' as *;
+
+*,
+*::before,
+*::after {
+  transition: all 0.3s ease-in-out;
+}
+body {
+  transition: 0.3s;
+  font-family: var(--font-family);
+  line-height: 145%;
+  color: $color-basic-gray;
+  font-weight: $fw-400;
+}

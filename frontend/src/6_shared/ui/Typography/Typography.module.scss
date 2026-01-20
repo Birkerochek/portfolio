@@ -1,0 +1,35 @@
+@use '@shared/styles/variables.scss' as *;
+@use '@shared/styles/mixins.scss' as *;
+
+.typography {
+  &--h1 {
+    @include adaptiv-font(72, 48);
+    font-weight: $fw-700;
+  }
+  &--h2 {
+    @include adaptiv-font(36, 30);
+    font-weight: $fw-700;
+  }
+  &--h3 {
+    @include adaptiv-font(24, 20);
+    font-weight: $fw-700;
+  }
+  &--h4 {
+    @include adaptiv-font(20, 18);
+    font-weight: $fw-700;
+  }
+  &--body{
+        @include adaptiv-font(16, 16);
+
+  }
+  &--small{
+    @include adaptiv-font(14, 14);
+  }
+  &--caption{
+    @include adaptiv-font(12, 12);
+  }
+  &--overline{
+    @include adaptiv-font(12, 12);
+    font-weight: $fw-500;
+  }
+}
