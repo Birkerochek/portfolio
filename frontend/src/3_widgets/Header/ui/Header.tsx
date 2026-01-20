@@ -4,7 +4,7 @@ export const Header = () => {
   return (
     <>
       <LogoIcon />
-      <h1 className={styles.titleHeader}>Solovev Portfolio</h1>
+      
     </>
   );
 };

@@ -1,5 +1,0 @@
-@use "@shared/styles/mixins.scss" as *;
-.titleHeader{
-    @include adaptiv-font(72, 48);
-    color: red;
-}

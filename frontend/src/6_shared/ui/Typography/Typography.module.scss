@@ -32,4 +32,18 @@
     @include adaptiv-font(12, 12);
     font-weight: $fw-500;
   }
+  &--color{
+    &-primary{
+      color: $color-primary;
+    }
+    &-gray{
+      color: $color-basic-gray;
+    }
+    &-black{
+      color: $color-basic-black;
+    }
+    &-white{
+      color: $color-basic-white;
+    }
+  }
 }
