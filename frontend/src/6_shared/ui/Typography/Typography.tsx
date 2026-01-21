@@ -5,9 +5,10 @@ import cn from 'classnames';
 export const Typography: FC<TypographyProps> = ({
   as = 'p',
   variant = 'body',
-  color = 'primary',
+  color = 'white',
   children,
   className,
+  fontFamily = 'sans',
   customStyles = false,
   ...props
 }) => {
@@ -18,7 +19,12 @@ export const Typography: FC<TypographyProps> = ({
         styles.typography,
         styles[`typography--${variant}`],
         styles[`typography--color-${color}`],
-        className
+        className,
+        {
+          [styles.typography__mono]: fontFamily === 'mono',
+          [styles.typography__sans]: fontFamily === 'sans',
+        },
+
       );
   return (
     <>

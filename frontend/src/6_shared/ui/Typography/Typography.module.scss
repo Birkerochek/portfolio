@@ -37,7 +37,7 @@
       color: $color-primary;
     }
     &-gray{
-      color: $color-basic-gray;
+      color: $color-basic-gray-light;
     }
     &-black{
       color: $color-basic-black;
@@ -45,5 +45,11 @@
     &-white{
       color: $color-basic-white;
     }
+  }
+  &__mono{
+    font-family: var(--font-family-mono);
+  }
+  &__sans{
+    font-family: var(--font-family);
   }
 }

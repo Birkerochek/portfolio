@@ -1,0 +1,111 @@
+@use '@shared/styles/variables.scss' as *;
+@use '@shared/styles/mixins.scss' as *;
+@mixin tagMixin() {
+  padding: 10px 16px;
+  border-radius: 12px;
+  background-color: #091018;
+  border: 1px solid $color-basic-gray;
+  position: absolute;
+   transition: none;
+}
+.info{
+    @include adaptiv-font(20, 18);
+}
+.hero {
+  min-height: calc(100vh - 100px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  &_name {
+    display: flex;
+    flex-direction: column;
+    gap: 52px;
+  }
+  &__btns{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    &_link {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      padding: 12px;
+      background-color: $color-basic-gray;
+      &:hover {
+        background-color: $color-primary;
+      }
+    }
+  }
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  &__right {
+    position: relative;
+    transition: none;
+    &_blob_1 {
+      position: absolute;
+      top: -5rem;
+      right: -5rem;
+      width: 16rem;
+      height: 16rem;
+      background-color: rgba(3, 199, 173, 0.15);
+      border-radius: 9999px;
+      filter: blur(64px);
+      z-index: 0;
+    }
+
+    &_blob_2 {
+      position: absolute;
+      bottom: -5rem;
+      left: -5rem;
+      width: 12rem;
+      height: 12rem;
+      background-color: rgba(0, 188, 162, 0.15);
+      border-radius: 9999px;
+      filter: blur(64px);
+      z-index: 0;
+    }
+
+    &_img {
+      position: relative;
+      border-radius: 24px;
+      height: 316px;
+      width: 316px;
+      z-index: 1;
+    }
+    &_tag {
+      &_left {
+        @include tagMixin();
+        left: -1.5rem;
+        bottom: 17%;
+        z-index: 2;
+       
+      }
+      &_right {
+       @include tagMixin();
+        right: -1.5rem;
+        top: 17%;
+        z-index: 2;
+      }
+    }
+  }
+  &__scroll {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    transition: none;
+    align-items: center;
+    transform: translateX(-50%);
+  }
+}

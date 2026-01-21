@@ -1,2 +1,4 @@
 export * from './Container/Container'
 export * from './Typography/Typography'
+export * from './Button/Button'
+export * from './Icon/Icon'
