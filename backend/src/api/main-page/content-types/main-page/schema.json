@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "main_pages",
+  "info": {
+    "singularName": "main-page",
+    "pluralName": "main-pages",
+    "displayName": "Main Page"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroBlock": {
+      "type": "component",
+      "component": "hero.hero",
+      "repeatable": false
+    },
+    "aboutBlock": {
+      "type": "component",
+      "component": "about.about",
+      "repeatable": false
+    },
+    "approach": {
+      "type": "component",
+      "component": "approach.approach",
+      "repeatable": true
+    },
+    "additionalSkills": {
+      "type": "component",
+      "component": "additional-skills.additional-skills",
+      "repeatable": true
+    }
+  }
+}

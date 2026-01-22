@@ -1,0 +1,177 @@
+@use '@shared/styles/variables.scss' as *;
+@use '@shared/styles/mixins.scss' as *;
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  grid-template-areas:
+    'mainText keySkills'
+    'approach extraSkills';
+  gap: 24px;
+}
+
+.cell {
+  min-height: 140px;
+}
+
+.mainText {
+  grid-area: mainText;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.approach {
+  grid-area: approach;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  &__item{
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+    
+    border-radius: $radius-base;
+    background-color: rgba($color-basic-gray, 0.5);
+    border: 1px solid $color-basic-gray-v2;
+    transition: .3s;
+    &:hover{
+        border: 1px solid $color-primary
+    }
+    &_left{
+        
+    }
+    &_right{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+  }
+}
+
+.approachLabel {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  right: 0;
+  height: 20px;
+}
+
+.keySkills {
+  grid-area: keySkills;
+  min-height: 240px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-self: start;
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+  &__skill {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: auto;
+    transform: translateY(0);
+    border: 1px solid  $color-basic-gray-v2;
+    transition: transform 0.3s ease-out, border-color 0.3s ease-out;
+    &:hover{
+        transform: translateY(-4px);
+        .keySkills__skill__bottom_tag_text {
+          color: $color-basic-white;
+        }
+        
+        border-color: color-mix(in srgb, var(--skill-color) 80%, white 20%);
+    }
+    &__top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      &_iconBg  {
+        background-color: rgba($color-basic-black, 0.5);
+        border: 1px solid $color-basic-gray-v2;
+        
+        border-radius: 12px;
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &_title {
+        font-weight: 500;
+      }
+    }
+    &__bottom{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        &_tag{
+            background-color: rgba($color-basic-black, 0.7);
+            border-radius: 10px;
+            padding: 4px 10px;
+            @include adaptiv-font(12, 12);
+            &_text{
+                transition: .3s;
+            }
+        }
+    }
+  }
+}
+
+.extraSkills {
+  grid-area: extraSkills;
+  background-color: rgba($color-basic-black-v3, 0.5);
+  border: 1px solid $color-basic-gray-v2;
+  border-radius: $radius-base;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  align-self: start;
+  &__items{
+    display: flex;
+    flex-wrap: wrap;
+   
+    gap: 8px;
+    &_item{
+        background-color: transparent;
+        border: 1px solid $color-basic-gray-v2;
+        border-radius: $radius-base;
+        padding: 6px 12px;
+    }
+  }
+}
+
+.subcell {
+  border-radius: $radius-base;
+  padding: 20px;
+  
+}
+
+.keySkillsTitle {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+  .about {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'mainText'
+      'approach'
+      'keySkills'
+      'extraSkills';
+  }
+
+  .mainText,
+  .keySkills {
+    min-height: 180px;
+  }
+
+  .approachLabel {
+    position: static;
+  }
+}

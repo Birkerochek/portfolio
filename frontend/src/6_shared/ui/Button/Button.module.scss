@@ -7,6 +7,8 @@
   border: none;
   display: flex;
   align-items: center;
+  text-align: center;
+  justify-content: center;
   cursor: pointer;
   gap: 8px;
   @include adaptiv-font(16, 16);

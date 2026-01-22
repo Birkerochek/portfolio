@@ -13,9 +13,17 @@ export const Icon: FC<IconProps> = ({
   size = 24,
   color,
   strokeWidth = 2,
+  ...props
 }) => {
   const LucideIcon = icons[name];
   if (!LucideIcon) return null;
 
-  return <LucideIcon size={size} color={color} strokeWidth={strokeWidth} />;
+  return (
+    <LucideIcon
+      size={size}
+      color={color}
+      strokeWidth={strokeWidth}
+      {...props}
+    />
+  );
 };

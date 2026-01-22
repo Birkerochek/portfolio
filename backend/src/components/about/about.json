@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_about_abouts",
+  "info": {
+    "displayName": "About"
+  },
+  "options": {},
+  "attributes": {
+    "firstP": {
+      "type": "text"
+    },
+    "secondP": {
+      "type": "text"
+    },
+    "thirdP": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

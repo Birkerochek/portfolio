@@ -5,6 +5,13 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   cacheComponents: true,
+  cacheLife: {
+    base: {
+      stale: 300,
+      revalidate: 900,
+      expire: 3600,
+    },
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
   },

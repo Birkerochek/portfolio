@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_approach_approaches",
+  "info": {
+    "displayName": "Approach"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

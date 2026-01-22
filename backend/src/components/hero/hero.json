@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_hero_heroes",
+  "info": {
+    "displayName": "Hero"
+  },
+  "options": {},
+  "attributes": {
+    "heroText": {
+      "type": "text"
+    },
+    "name": {
+      "type": "string"
+    },
+    "surname": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

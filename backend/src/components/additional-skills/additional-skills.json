@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_additional_skills_additional_skills",
+  "info": {
+    "displayName": "additionalSkills"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
