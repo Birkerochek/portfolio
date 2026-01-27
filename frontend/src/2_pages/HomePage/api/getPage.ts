@@ -1,5 +1,6 @@
 import { api } from '@shared/api';
 import { cacheLife, cacheTag } from 'next/cache';
+import { CardProps } from '../ui/Experience/Card';
 
 export type HeroBlock = {
   heroText: string;
@@ -20,7 +21,9 @@ export type aboutBlock = {
     title: string;
   }[];
 };
-
+type ExperienceBlock = CardProps & {
+  id: number;
+}
 export type MainPage = {
   id: string;
   heroBlock: HeroBlock;
@@ -34,6 +37,7 @@ export type MainPage = {
     id: number;
     title: string;
   }[];
+  experienceBlock: ExperienceBlock[];
 };
 export async function getPage(): Promise<MainPage> {
   'use cache';

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_experience_experiences",
+  "info": {
+    "displayName": "Experience"
+  },
+  "options": {},
+  "attributes": {
+    "date": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "place": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "stack": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

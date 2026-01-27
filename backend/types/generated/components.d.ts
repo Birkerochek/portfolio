@@ -34,6 +34,21 @@ export interface ApproachApproach extends Struct.ComponentSchema {
   };
 }
 
+export interface ExperienceExperience extends Struct.ComponentSchema {
+  collectionName: 'components_experience_experiences';
+  info: {
+    displayName: 'Experience';
+  };
+  attributes: {
+    address: Schema.Attribute.String;
+    date: Schema.Attribute.String;
+    description: Schema.Attribute.String;
+    place: Schema.Attribute.String;
+    role: Schema.Attribute.String;
+    stack: Schema.Attribute.String;
+  };
+}
+
 export interface HeroHero extends Struct.ComponentSchema {
   collectionName: 'components_hero_heroes';
   info: {
@@ -43,6 +58,20 @@ export interface HeroHero extends Struct.ComponentSchema {
     heroText: Schema.Attribute.Text;
     name: Schema.Attribute.String;
     surname: Schema.Attribute.String;
+  };
+}
+
+export interface PetProjectsPetProjects extends Struct.ComponentSchema {
+  collectionName: 'components_pet_projects_pet_projects';
+  info: {
+    displayName: 'Pet Projects';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    link: Schema.Attribute.Text;
+    stack: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -60,7 +89,9 @@ declare module '@strapi/strapi' {
       'about.about': AboutAbout;
       'additional-skills.additional-skills': AdditionalSkillsAdditionalSkills;
       'approach.approach': ApproachApproach;
+      'experience.experience': ExperienceExperience;
       'hero.hero': HeroHero;
+      'pet-projects.pet-projects': PetProjectsPetProjects;
       'skills.skills': SkillsSkills;
     }
   }

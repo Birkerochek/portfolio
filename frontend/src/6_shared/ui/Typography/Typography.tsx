@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { TypographyProps } from './types';
 import styles from './Typography.module.scss';
 import cn from 'classnames';
+import { MotionDiv } from '@shared/lib';
 export const Typography: FC<TypographyProps> = ({
   as = 'p',
   variant = 'body',
@@ -30,6 +31,7 @@ export const Typography: FC<TypographyProps> = ({
     <>
       <Component className={classes} {...props}>
         {children}
+       
       </Component>
     </>
   );

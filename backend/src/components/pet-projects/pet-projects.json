@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_pet_projects_pet_projects",
+  "info": {
+    "displayName": "Pet Projects"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "stack": {
+      "type": "string"
+    },
+    "link": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    }
+  },
+  "config": {}
+}

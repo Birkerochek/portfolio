@@ -30,6 +30,16 @@
       "type": "component",
       "component": "additional-skills.additional-skills",
       "repeatable": true
+    },
+    "experienceBlock": {
+      "type": "component",
+      "component": "experience.experience",
+      "repeatable": true
+    },
+    "petProjects": {
+      "type": "component",
+      "component": "pet-projects.pet-projects",
+      "repeatable": true
     }
   }
 }

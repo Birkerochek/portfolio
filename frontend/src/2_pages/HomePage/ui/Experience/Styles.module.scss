@@ -1,0 +1,144 @@
+@use '@shared/styles/variables.scss' as *;
+@use '@shared/styles/mixins.scss' as *;
+.card {
+  border: 1px solid $color-border-gray;
+  border-radius: $radius-base;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-basic-black-v3;
+  gap: 18px;
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    &_date {
+      display: flex;
+      gap: 5px;
+      
+    }
+    &_place {
+      display: flex;
+      gap: 5px;
+      &_item{
+        display: flex;
+        gap: 8px;
+        align-items: center
+      }
+     
+    }
+  }
+
+  &__bottom {
+    @extend .card__top;
+    flex-direction: row;
+
+    &_tag {
+      border-radius: 5px;
+      padding: 4px 10px;
+      background-color: rgba($color-primary, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &_company {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  &_tagText{
+    line-height: 118%;
+  }
+  
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  margin-top: 28px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    
+    transform: translateX(-50%);
+    background: $color-basic-gray;
+  }
+
+  &__row {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 72px minmax(0, 1fr);
+    column-gap: 40px;
+    align-items: flex-start;
+  }
+
+  &__col {
+    display: flex;
+
+    &_left {
+      justify-content: flex-end;
+    }
+
+    &_right {
+      justify-content: flex-start;
+    }
+  }
+
+  &__center {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    border-radius: $radius-circle;
+    background-color: $color-primary;
+    box-shadow: 0 0 0 6px $color-basic-black-v3;
+  }
+
+  &__card {
+    width: min(100%, 520px);
+  }
+}
+
+@media (max-width: 900px) {
+  .timeline {
+    gap: 28px;
+   
+    &::before {
+      
+      display: none;
+    }
+
+    &__row {
+      grid-template-columns: 1fr;
+    }
+
+    &__center {
+      position: relative;
+      
+       display: none;
+    }
+
+   
+
+    &__col_left,
+    &__col_right {
+      justify-content: flex-start;
+    }
+
+    &__card {
+      width: 100%;
+    }
+  }
+}

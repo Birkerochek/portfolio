@@ -487,6 +487,7 @@ export interface ApiMainPageMainPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    experienceBlock: Schema.Attribute.Component<'experience.experience', true>;
     heroBlock: Schema.Attribute.Component<'hero.hero', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -494,6 +495,7 @@ export interface ApiMainPageMainPage extends Struct.SingleTypeSchema {
       'api::main-page.main-page'
     > &
       Schema.Attribute.Private;
+    petProjects: Schema.Attribute.Component<'pet-projects.pet-projects', true>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

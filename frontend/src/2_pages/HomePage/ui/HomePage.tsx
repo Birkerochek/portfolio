@@ -5,6 +5,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { getSkills } from '../api/getSkills';
 import { About } from './About/About';
 import styles from './Styles.module.scss';
+import { Experience } from './Experience';
 export const HomePage = () => {
   const dataPromise = getPage();
   const data = use(dataPromise);
@@ -13,7 +14,7 @@ export const HomePage = () => {
 
   const skillsPromise = getSkills();
   const skillsData = use(skillsPromise);
-
+  const experienceData = data.experienceBlock;
   const aboutData = {
     ...aboutText,
     skillCategories: skillsData,
@@ -23,15 +24,24 @@ export const HomePage = () => {
 
   return (
     <>
-      <ErrorBoundary fallback={<div>Ошибка загрузки страницы</div>}>
+      <ErrorBoundary fallback={<div>Ошибка загрузки информации</div>}>
         <Suspense fallback={<div>Loading...</div>}>
           <Hero heroData={heroData} />
         </Suspense>
       </ErrorBoundary>
       <div className={styles.homePage__section}>
-        <Suspense fallback={<div>Loading...</div>}>
-          <About aboutData={aboutData} />
-        </Suspense>
+        <ErrorBoundary fallback={<div>Ошибка загрузки информации</div>}>
+          <Suspense fallback={<div>Loading...</div>}>
+            <About aboutData={aboutData} />
+          </Suspense>
+        </ErrorBoundary>
+      </div>
+       <div className={styles.homePage__section}>
+        <ErrorBoundary fallback={<div>Ошибка загрузки информации</div>}>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Experience experienceData={experienceData} />
+          </Suspense>
+        </ErrorBoundary>
       </div>
     </>
   );

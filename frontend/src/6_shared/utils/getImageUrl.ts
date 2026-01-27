@@ -1,4 +1,4 @@
-type MediaLike = { url?: string } | string | undefined | null;
+export type MediaLike = { url?: string } | string | undefined | null;
 
 export function getImageUrl(src: MediaLike): string | undefined {
   if (!src) return undefined;
