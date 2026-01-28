@@ -1,7 +1,9 @@
 import { MainLayout } from '@app/layouts';
 import { Metadata } from 'next';
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://solovev.tech'),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? 'https://solovev.tech'
+  ),
   title: 'Solovev Portfolio',
   description: 'Портфолио Соловьева Романа',
   openGraph: {
