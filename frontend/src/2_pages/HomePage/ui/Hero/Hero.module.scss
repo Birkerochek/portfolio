@@ -132,7 +132,10 @@
     flex-direction: column;
     transition: none;
     align-items: center;
-    margin-bottom: 30px;
+    // @include adaptive-property(margin-bottom, 10px, 30px);
+      @media (max-width: 420px){
+        margin-bottom: 30px;
+      }
 
     transform: translateX(-50%);
     @media (max-height: 690px) {

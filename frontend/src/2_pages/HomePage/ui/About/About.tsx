@@ -27,7 +27,7 @@ export const About = ({ aboutData }: AboutProps) => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <Container>
+    <Container >
       <motion.div
         initial={{ opacity: 0 }}
         animate={isInView && { opacity: 1 }}

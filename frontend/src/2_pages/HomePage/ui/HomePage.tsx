@@ -32,7 +32,7 @@ export const HomePage = () => {
       <ErrorBoundary fallback={<div>Произошла ошибка загрузки</div>}>
           <Hero heroData={heroData} />
       </ErrorBoundary>
-      <div className={styles.homePage__section} id="about">
+      <div id="about">
         <ErrorBoundary fallback={<div>Произошла ошибка при загрузке информации обо мне</div>}>
             <About aboutData={aboutData} />
         </ErrorBoundary>

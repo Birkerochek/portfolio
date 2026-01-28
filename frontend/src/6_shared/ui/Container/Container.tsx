@@ -4,8 +4,9 @@ import styles from './Container.module.scss';
 
 interface ContainerProps extends PropsWithChildren {
   className?: string;
+  style?: React.CSSProperties;
 }
 
-export const Container: React.FC<ContainerProps> = ({ children, className }) => {
-  return <div className={cn(styles.container, className)}>{children}</div>;
+export const Container: React.FC<ContainerProps> = ({ children, className, style }) => {
+  return <div className={cn(styles.container, className)} style={style}>{children}</div>;
 };
