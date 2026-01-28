@@ -1,7 +1,7 @@
-const path = require('path');
+import type { NextConfig } from 'next';
+import path from 'path';
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   cacheComponents: true,
@@ -15,48 +15,52 @@ const nextConfig = {
       expire: 3600,
     },
   },
-  allowedDevOrigins: ['localhost', '127.0.0.1', 'portfolioapi'],
+  allowedDevOrigins: ['localhost', '127.0.0.1', 'portfolioapi',],
   images: {
     formats: ['image/avif', 'image/webp'],
     dangerouslyAllowLocalIP: process.env.NODE_ENV === 'development',
-    remotePatterns: [
+     remotePatterns: [
       {
         protocol: 'http',
         hostname: 'localhost',
-        port: '1337',
+        port:     '1337',
         pathname: '/uploads/**/*',
         search: '',
+        
+      },
+      {
+        protocol: 'http',
+        hostname: '127.0.0.1',
+        port:     '1337',
+        
       },
       {
         protocol: 'http',
         hostname: '127.0.0.1',
         port: '1337',
+        pathname: '/uploads/**/*',
+        search: "",
       },
       {
-        protocol: 'http',
-        hostname: '127.0.0.1',
-        port: '1337',
+        protocol: 'https',
+        hostname: 'portfolioapi',
+        port:     '',
         pathname: '/uploads/**/*',
         search: '',
+        
+      },
+      {
+        protocol: 'https',
+        hostname: 'portfolioapi',
+        port:     '',
+        
       },
       {
         protocol: 'https',
         hostname: 'portfolioapi',
         port: '',
         pathname: '/uploads/**/*',
-        search: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'portfolioapi',
-        port: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'portfolioapi',
-        port: '',
-        pathname: '/uploads/**/*',
-        search: '',
+        search: "",
       },
       {
         protocol: 'https',
@@ -65,7 +69,10 @@ const nextConfig = {
         pathname: '/uploads/**/*',
         search: '',
       },
+     
+      
     ],
+    
   },
   sassOptions: {
     includePaths: [path.resolve(__dirname, 'src')],
@@ -97,11 +104,11 @@ const nextConfig = {
       },
     },
 
-    // resolveAlias работает только для JS/TS, не для SCSS
+    // resolveAlias СЂР°Р±РѕС‚Р°РµС‚ С‚РѕР»СЊРєРѕ РґР»СЏ JS/TS, РЅРµ РґР»СЏ SCSS
     resolveAlias: {
       '@shared': path.resolve(__dirname, 'src/6_shared'),
     },
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
