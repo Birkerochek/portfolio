@@ -24,7 +24,7 @@ ENV API_URL=$API_URL
 ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
 
 COPY package.json package-lock.json ./
-RUN npm ci --omit=dev
+RUN npm ci
 
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next ./.next
