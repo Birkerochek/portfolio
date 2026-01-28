@@ -40,6 +40,11 @@
       "type": "component",
       "component": "pet-projects.pet-projects",
       "repeatable": true
+    },
+    "otherProjects": {
+      "type": "component",
+      "component": "other-projects.other-projects",
+      "repeatable": true
     }
   }
 }

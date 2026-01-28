@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_other_projects_other_projects",
+  "info": {
+    "displayName": "Other Projects"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "stack": {
+      "type": "string"
+    },
+    "link": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

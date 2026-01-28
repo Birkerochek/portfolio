@@ -9,4 +9,11 @@
         height: 1px;
         background-color: $color-basic-gray-v2;
     }
+    &_subtitle{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
 }

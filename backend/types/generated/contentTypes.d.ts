@@ -495,6 +495,10 @@ export interface ApiMainPageMainPage extends Struct.SingleTypeSchema {
       'api::main-page.main-page'
     > &
       Schema.Attribute.Private;
+    otherProjects: Schema.Attribute.Component<
+      'other-projects.other-projects',
+      true
+    >;
     petProjects: Schema.Attribute.Component<'pet-projects.pet-projects', true>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;

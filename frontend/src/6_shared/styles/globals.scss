@@ -1,6 +1,7 @@
 @use '@shared/styles/variables.scss' as *;
 
 
+html,
 body {
   transition: 0.3s;
   font-family: var(--font-family);
@@ -8,4 +9,13 @@ body {
   color: $color-basic-white;
   font-weight: $fw-400;
   background-color: $color-basic-black;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
 }

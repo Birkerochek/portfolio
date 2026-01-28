@@ -15,8 +15,36 @@ const nextConfig: NextConfig = {
       expire: 3600,
     },
   },
+  allowedDevOrigins: ['localhost', '127.0.0.1',],
   images: {
     formats: ['image/avif', 'image/webp'],
+    dangerouslyAllowLocalIP: process.env.NODE_ENV === 'development',
+     remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port:     '1337',
+        pathname: '/uploads/**/*',
+        search: '',
+        
+      },
+      {
+        protocol: 'http',
+        hostname: '127.0.0.1',
+        port:     '1337',
+        
+      },
+      {
+        protocol: 'http',
+        hostname: '127.0.0.1',
+        port: '1337',
+        pathname: '/uploads/**/*',
+        search: "",
+      },
+     
+      
+    ],
+    
   },
   sassOptions: {
     includePaths: [path.resolve(__dirname, 'src')],

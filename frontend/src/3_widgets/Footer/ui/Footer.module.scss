@@ -1,0 +1,67 @@
+@use '@shared/styles/variables.scss' as *;
+
+.footer {
+  margin-top: 96px;
+  border-top: 1px solid $color-border-gray;
+  background: $color-basic-black-v3;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 0 28px;
+}
+
+.footer__icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer__iconLink {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid $color-border-gray;
+  background-color: rgba($color-basic-black-v3, 0.8);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    border-color: rgba($color-primary, 0.6);
+    transform: translateY(-1px);
+  }
+}
+
+.footer__icon {
+  color: $color-basic-gray-light;
+}
+
+.footer__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  text-align: right;
+}
+
+@media (max-width: 720px) {
+  .footer__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer__icons {
+    justify-content: center;
+  }
+
+  .footer__meta {
+    align-items: center;
+    text-align: center;
+  }
+}

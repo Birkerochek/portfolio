@@ -6,29 +6,32 @@
   background-color: #091018;
   border: 1px solid $color-basic-gray;
   position: absolute;
-   transition: none;
+  transition: none;
 }
-.info{
-    @include adaptiv-font(20, 18);
+.info {
+  @include adaptiv-font(20, 18);
 }
 .hero {
   min-height: calc(100vh - 100px);
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
   &_name {
     display: flex;
     flex-direction: column;
     gap: 52px;
   }
-  &__btns{
+  &__btns {
     display: flex;
     align-items: center;
     gap: 16px;
-    @media(max-width: 420px) {
+    @media (max-width: 420px) {
       flex-direction: column;
       width: 100%;
-      button{
+      button {
         width: 100%;
       }
     }
@@ -54,10 +57,14 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
+    max-width: 484px;
   }
   &__right {
     position: relative;
     transition: none;
+    @media (max-width: 1250px) {
+      margin-right: 20px;
+    }
     @media (max-width: 768px) {
       display: none;
     }
@@ -71,10 +78,14 @@
       border-radius: 9999px;
       filter: blur(64px);
       z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
     }
 
     &_blob_2 {
       position: absolute;
+      overflow: hidden;
+
       bottom: -5rem;
       left: -5rem;
       width: 12rem;
@@ -83,6 +94,7 @@
       border-radius: 9999px;
       filter: blur(64px);
       z-index: 0;
+      pointer-events: none;
     }
 
     &_img {
@@ -98,10 +110,9 @@
         left: -1.5rem;
         bottom: 17%;
         z-index: 2;
-       
       }
       &_right {
-       @include tagMixin();
+        @include tagMixin();
         right: -1.5rem;
         top: 17%;
         z-index: 2;
@@ -116,6 +127,13 @@
     flex-direction: column;
     transition: none;
     align-items: center;
+
     transform: translateX(-50%);
+    &_inside {
+      display: flex;
+      flex-direction: column;
+      transition: none;
+      align-items: center;
+    }
   }
 }

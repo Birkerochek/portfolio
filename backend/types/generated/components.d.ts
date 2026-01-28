@@ -61,6 +61,19 @@ export interface HeroHero extends Struct.ComponentSchema {
   };
 }
 
+export interface OtherProjectsOtherProjects extends Struct.ComponentSchema {
+  collectionName: 'components_other_projects_other_projects';
+  info: {
+    displayName: 'Other Projects';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    link: Schema.Attribute.Text;
+    stack: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface PetProjectsPetProjects extends Struct.ComponentSchema {
   collectionName: 'components_pet_projects_pet_projects';
   info: {
@@ -91,6 +104,7 @@ declare module '@strapi/strapi' {
       'approach.approach': ApproachApproach;
       'experience.experience': ExperienceExperience;
       'hero.hero': HeroHero;
+      'other-projects.other-projects': OtherProjectsOtherProjects;
       'pet-projects.pet-projects': PetProjectsPetProjects;
       'skills.skills': SkillsSkills;
     }

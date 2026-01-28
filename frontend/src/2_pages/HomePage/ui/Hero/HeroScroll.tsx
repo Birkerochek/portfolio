@@ -9,6 +9,7 @@ export const HeroScroll = () => {
      initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.5 }}
+        className={styles.hero__scroll}
     >
       <motion.div
         className={styles.hero__scroll}
