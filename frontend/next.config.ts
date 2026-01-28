@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
       expire: 3600,
     },
   },
-  allowedDevOrigins: ['localhost', '127.0.0.1',],
+  allowedDevOrigins: ['localhost', '127.0.0.1', 'portfolioapi',],
   images: {
     formats: ['image/avif', 'image/webp'],
     dangerouslyAllowLocalIP: process.env.NODE_ENV === 'development',
@@ -40,6 +40,34 @@ const nextConfig: NextConfig = {
         port: '1337',
         pathname: '/uploads/**/*',
         search: "",
+      },
+      {
+        protocol: 'https',
+        hostname: 'portfolioapi',
+        port:     '',
+        pathname: '/uploads/**/*',
+        search: '',
+        
+      },
+      {
+        protocol: 'https',
+        hostname: 'portfolioapi',
+        port:     '',
+        
+      },
+      {
+        protocol: 'https',
+        hostname: 'portfolioapi',
+        port: '',
+        pathname: '/uploads/**/*',
+        search: "",
+      },
+      {
+        protocol: 'https',
+        hostname: 'portfolioapi.ru',
+        port: '',
+        pathname: '/uploads/**/*',
+        search: '',
       },
      
       

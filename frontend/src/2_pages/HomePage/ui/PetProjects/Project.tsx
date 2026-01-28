@@ -27,7 +27,7 @@ export const Project: FC<ProjectProps> = ({
   const stackItems = stack
     ? stack.split(',').map((item) => item.trim()).filter(Boolean)
     : [];
-  
+  console.log(imageUrl)
   return (
     <div
       className={`${styles.project} ${isReversed ? styles.project_reverse : ''}`}
