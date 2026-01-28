@@ -5,6 +5,12 @@ import styles from './Hero.module.scss';
 import { HeroBlock } from '@pages/HomePage/api/getPage';
 import Link from 'next/link';
 export const HeroLeft = ({ data }: { data: HeroBlock }) => {
+  const scrollToSection = (id: string) => {
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
   return (
     <motion.div
       className={styles.hero__left}
@@ -73,9 +79,21 @@ export const HeroLeft = ({ data }: { data: HeroBlock }) => {
         </Link>
       </div>
       <div className={styles.hero__btns}>
-        <Button label="Смотреть проекты" size="large" variant="primary" />
+        <Button
+          label="Смотреть проекты"
+          size="large"
+          variant="primary"
+          type="button"
+          onClick={() => scrollToSection('pet-projects')}
+        />
 
-        <Button label="Связаться" size="large" variant="black" />
+        <Button
+          label="Связаться"
+          size="large"
+          variant="black"
+          type="button"
+          onClick={() => scrollToSection('contacts')}
+        />
       </div>
     </motion.div>
   );

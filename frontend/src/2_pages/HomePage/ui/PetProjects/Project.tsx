@@ -1,5 +1,5 @@
 import { getImageUrl, type MediaLike } from '@shared/utils';
-import { Icon, Typography } from '@shared/ui';
+import { Button, Icon, Typography } from '@shared/ui';
 import { COLORS } from '@shared/constants';
 import Image from 'next/image';
 import { FC } from 'react';
@@ -84,7 +84,8 @@ export const Project: FC<ProjectProps> = ({
               rel="noreferrer"
               aria-label={`${title} repository`}
             >
-              <Icon name="Github" size={18} color={COLORS.GRAY_LIGHT} />
+              <Button label="Посмотреть на GitHub" size='small' variant='primaryOutline'><Icon name="Github" size={18} color={COLORS.GRAY_LIGHT} /></Button>
+              {/* <Icon name="Github" size={18} color={COLORS.GRAY_LIGHT} /> */}
             </a>
           )}
         </div>

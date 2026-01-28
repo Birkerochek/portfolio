@@ -1,4 +1,4 @@
-import { Suspense, use } from 'react';
+﻿import { Suspense, use } from 'react';
 import { getPage } from '../api/getPage';
 import { Hero } from './Hero/Hero';
 import { ErrorBoundary } from 'react-error-boundary';
@@ -29,26 +29,26 @@ export const HomePage = () => {
 
   return (
     <>
-      <ErrorBoundary fallback={<div>Ошибка загрузки информации</div>}>
+      <ErrorBoundary fallback={<div>Произошла ошибка загрузки</div>}>
           <Hero heroData={heroData} />
       </ErrorBoundary>
-      <div className={styles.homePage__section}>
-        <ErrorBoundary fallback={<div>Ошибка загрузки информации</div>}>
+      <div className={styles.homePage__section} id="about">
+        <ErrorBoundary fallback={<div>Произошла ошибка при загрузке информации обо мне</div>}>
             <About aboutData={aboutData} />
         </ErrorBoundary>
       </div>
-      <div className={styles.homePage__section}>
-        <ErrorBoundary fallback={<div>Ошибка загрузки информации</div>}>
+      <div className={styles.homePage__section} id="experience">
+        <ErrorBoundary fallback={<div>Произошла ошибка при загрузке опыта</div>}>
             <Experience experienceData={experienceData} />
         </ErrorBoundary>
       </div>
-      <div className={styles.homePage__section}>
-        <ErrorBoundary fallback={<div>Ошибка загрузки информации</div>}>
+      <div className={styles.homePage__section} id="pet-projects">
+        <ErrorBoundary fallback={<div>Произошла ошибка при загрузке проектов</div>}>
             <PetProjects projects={petProjects} />
         </ErrorBoundary>
       </div>
       <div className={styles.homePage__section}>
-        <ErrorBoundary fallback={<div>Ошибка загрузки информации</div>}>
+        <ErrorBoundary fallback={<div>Произошла ошибка при загрузке проектов</div>}>
             <OtherProjects
               projects={otherProjects}
               
@@ -56,7 +56,7 @@ export const HomePage = () => {
           
         </ErrorBoundary>
       </div>
-      <div className={styles.homePage__section}>
+      <div className={styles.homePage__section} id="contacts">
         <Contact />
       </div>
     </>

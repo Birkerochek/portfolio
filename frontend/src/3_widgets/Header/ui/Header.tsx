@@ -5,7 +5,7 @@ import { Button, Container, Typography } from '@shared/ui';
 import { links } from '../model/links';
 import { Icon } from '@shared/ui/Icon/Icon';
 import Link from 'next/link';
-import { AnimatePresence, motion } from 'framer-motion';
+import {  motion } from 'framer-motion';
 import { COLORS, PAGES } from '@shared/constants';
 import { useEffect, useState } from 'react';
 import { MobileHeader } from './MobileHeader';
@@ -40,7 +40,11 @@ export const Header = () => {
           <div className={styles.header__right}>
             <div className={styles.header__navs}>
               {links.map((link) => (
-                <a key={link.id} className={styles.header__navs_nav}>
+                <a
+                  key={link.id}
+                  className={styles.header__navs_nav}
+                  href={link.href}
+                >
                   <Typography
                     fontFamily="mono"
                     color="primary"

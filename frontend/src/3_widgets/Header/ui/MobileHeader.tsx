@@ -42,6 +42,7 @@ export const MobileHeader = ({isOpen, setIsOpen}: {isOpen: boolean, setIsOpen: R
                   <a
                     key={link.id}
                     className={styles.mobileNavs_item}
+                    href={link.href}
                     onClick={closeMenu}
                   >
                     <Typography
