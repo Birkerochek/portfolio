@@ -34,3 +34,18 @@ $baseFontSize: 16;
   
   font-size: clamp(#{$minRem}rem, #{$interceptRem}rem + #{$slopeVw}vw, #{$maxRem}rem);
 }
+
+@mixin adaptive-property($property, $pcValue, $mobValue, $base: $baseFontSize) {
+  $pc: px-number($pcValue);
+  $mob: px-number($mobValue);
+
+  $minRem: math.div($mob, $base);
+  $maxRem: math.div($pc, $base);
+
+  $slope: math.div($pc - $mob, $maxWidth - $minWidth);
+  $slopeVw: $slope * 100;
+  $intercept: $mob - $slope * $minWidth;
+  $interceptRem: math.div($intercept, $base);
+
+  #{$property}: clamp(#{$minRem}rem, #{$interceptRem}rem + #{$slopeVw}vw, #{$maxRem}rem);
+}

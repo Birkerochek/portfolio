@@ -25,7 +25,8 @@
   &_name {
     display: flex;
     flex-direction: column;
-    gap: 52px;
+    @include adaptive-property(gap, 52px, 30px);
+    
   }
   &__btns {
     display: flex;
@@ -131,7 +132,7 @@
     flex-direction: column;
     transition: none;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 
     transform: translateX(-50%);
     @media (max-height: 690px) {
