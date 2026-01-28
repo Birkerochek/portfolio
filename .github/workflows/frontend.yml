@@ -1,4 +1,4 @@
-name: Build and push backend image
+name: Build and push frontend image
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
       - main
       - master
     paths:
-      - backend/**
-      - .github/workflows/main.yml
+      - frontend/**
+      - .github/workflows/frontend.yml
   workflow_dispatch:
 
 permissions:
@@ -16,7 +16,7 @@ permissions:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}-backend
+  IMAGE_NAME: ${{ github.repository }}-frontend
 
 jobs:
   build:
@@ -48,8 +48,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: ./backend
-          file: ./backend/Dockerfile.prod
+          context: ./frontend
+          file: ./frontend/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
