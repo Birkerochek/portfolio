@@ -12,7 +12,7 @@
   @include adaptiv-font(20, 18);
 }
 .hero {
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh);
   position: relative;
   display: flex;
   align-items: center;
@@ -51,6 +51,7 @@
       border-radius: 100%;
       padding: 12px;
       background-color: $color-basic-gray;
+      transition: .3s;
       &:hover {
         background-color: $color-primary;
       }
@@ -130,6 +131,7 @@
     flex-direction: column;
     transition: none;
     align-items: center;
+    margin-bottom: 10px;
 
     transform: translateX(-50%);
     @media (max-height: 690px) {

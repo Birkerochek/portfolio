@@ -1,9 +1,24 @@
 @use '@shared/styles/variables.scss' as *;
 .headerWrapper {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 50;
 }
+
+.headerWrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 8, 15, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
 .header {
+   position: relative;
+  z-index: 1;
   padding: 16px 0;
   display: flex;
   align-items: center;
