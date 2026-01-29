@@ -1,5 +1,4 @@
 @use '@shared/styles/variables.scss' as *;
-@use 'sass:color';
 @use '@shared/styles/mixins.scss' as *;
 .button {
   border-radius: 50px;
@@ -41,7 +40,7 @@
       transition: .3s;
 
     &:hover {
-      background-color: color.adjust($color-primary, $lightness: -10%);
+      background-color: var(--color-primary-hover);
     }
   }
   &__black {
@@ -51,7 +50,7 @@
       transition: .3s;
 
     &:hover {
-      background-color: color.adjust($color-basic-black, $lightness: -1%);
+      background-color: var(--color-basic-black-hover);
     }
   }
   &__size {

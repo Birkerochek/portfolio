@@ -11,10 +11,10 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(3, 8, 15, 0.6);
+  background: rgb(var(--color-basic-black-rgb) / 0.6);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgb(var(--color-basic-white-rgb) / 0.06);
 }
 .header {
    position: relative;
@@ -62,7 +62,7 @@
   position: fixed;
   inset: 0;
   z-index: 40;
-  background-color: rgba(3, 8, 15, 0.7);
+  background-color: rgb(var(--color-basic-black-rgb) / 0.7);
   backdrop-filter: blur(4px);
 
   @media (min-width: 769px) {

@@ -4,8 +4,11 @@ import { Button,  Icon, Typography } from '@shared/ui';
 import { COLORS } from "@shared/constants";
 import { links } from "../model/links";
 import Link from "next/link";
+import { useThemeStore } from "@shared/lib";
 export const MobileHeader = ({isOpen, setIsOpen}: {isOpen: boolean, setIsOpen: React.Dispatch<React.SetStateAction<boolean>>}) => {
   const closeMenu = () => setIsOpen(false);
+  const theme = useThemeStore((state) => state.theme);
+  const toggleTheme = useThemeStore((state) => state.toggleTheme);
   return (
           <AnimatePresence>
         {isOpen && (
@@ -58,6 +61,18 @@ export const MobileHeader = ({isOpen, setIsOpen}: {isOpen: boolean, setIsOpen: R
                   </a>
                 ))}
               </div>
+              <Button
+                size="small"
+                variant="primaryOutline"
+                iconPosition="left"
+                fullWidth
+                onClick={() => {
+                  toggleTheme();
+                  closeMenu();
+                }}
+              >
+                <Icon name={theme === 'dark' ? 'Sun' : 'Moon'} size={18} />
+              </Button>
               <Link href={'https://github.com/Birkerochek'}>
                 <Button
                   label="Github"

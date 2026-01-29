@@ -1,1 +1,1 @@
-//index file
+export { ThemeProvider } from './ThemeProvider';

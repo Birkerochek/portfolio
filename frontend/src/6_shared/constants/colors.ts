@@ -1,10 +1,10 @@
 export const COLORS = {
-    PRIMARY: '#00BCA2',
-    WHITE: '#EAEFF5',
-    GRAY_LIGHT:  '#86909B',
-    GRAY: '#141B24',
-    GRAY_V2: '#212A33',
-    BLACK: '#03080F',
-    BLACK_V2: '#212A33',
+    PRIMARY: 'var(--color-primary)',
+    WHITE: 'var(--color-basic-white)',
+    GRAY_LIGHT:  'var(--color-basic-gray-light)',
+    GRAY: 'var(--color-basic-gray)',
+    GRAY_V2: 'var(--color-basic-gray-v2)',
+    BLACK: 'var(--color-basic-black)',
+    BLACK_V2: 'var(--color-basic-black-v2)',
 }
 

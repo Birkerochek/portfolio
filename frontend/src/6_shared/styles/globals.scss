@@ -1,5 +1,49 @@
 @use '@shared/styles/variables.scss' as *;
 
+:root {
+  --color-primary: #00BCA2;
+  --color-primary-hover: #00a892;
+  --color-basic-white: #EAEFF5;
+  --color-basic-gray-light: #86909B;
+  --color-basic-gray: #141B24;
+  --color-basic-gray-v2: #212A33;
+  --color-basic-black: #03080F;
+  --color-basic-black-hover: #02060c;
+  --color-basic-black-v2: #212A33;
+  --color-basic-black-v3: #091018;
+  --color-border-gray: #212A33;
+
+  --color-primary-rgb: 0 188 162;
+  --color-basic-white-rgb: 234 239 245;
+  --color-basic-gray-rgb: 20 27 36;
+  --color-basic-gray-v2-rgb: 33 42 51;
+  --color-basic-black-rgb: 3 8 15;
+  --color-basic-black-v3-rgb: 9 16 24;
+  --color-border-gray-rgb: 33 42 51;
+}
+
+[data-theme='light'] {
+  --color-primary: #0AA58F;
+  --color-primary-hover: #098b78;
+  --color-basic-white: #0B1220;
+  --color-basic-gray-light: #5A6774;
+  --color-basic-gray: #E9EEF4;
+  --color-basic-gray-v2: #F2F5F9;
+  --color-basic-black: #F7FAFC;
+  --color-basic-black-hover: #edf2f7;
+  --color-basic-black-v2: #E9EEF4;
+  --color-basic-black-v3: #DEE6EF;
+  --color-border-gray: #D6DEE8;
+
+  --color-primary-rgb: 10 165 143;
+  --color-basic-white-rgb: 11 18 32;
+  --color-basic-gray-rgb: 233 238 244;
+  --color-basic-gray-v2-rgb: 242 245 249;
+  --color-basic-black-rgb: 247 250 252;
+  --color-basic-black-v3-rgb: 222 230 239;
+  --color-border-gray-rgb: 214 222 232;
+}
+
 
 html,
 body {

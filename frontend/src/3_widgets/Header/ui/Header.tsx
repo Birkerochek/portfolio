@@ -9,8 +9,11 @@ import { motion } from 'framer-motion';
 import { COLORS, PAGES } from '@shared/constants';
 import { useEffect, useState } from 'react';
 import { MobileHeader } from './MobileHeader';
+import { useThemeStore } from '@shared/lib';
 export const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const theme = useThemeStore((state) => state.theme);
+  const toggleTheme = useThemeStore((state) => state.toggleTheme);
   const fVariants = {
     hidden: { y: -100 },
     visible: { y: 0 },
@@ -66,6 +69,14 @@ export const Header = () => {
                   <Icon name="Github" size={20} strokeWidth={2} />
                 </Button>
               </Link>
+              <Button
+                size="small"
+                variant="black"
+                iconPosition="left"
+                onClick={toggleTheme}
+              >
+                <Icon name={theme === 'dark' ? 'Sun' : 'Moon'} size={18} />
+              </Button>
             </div>
             {!isOpen && (
               <Icon

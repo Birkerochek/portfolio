@@ -3,6 +3,7 @@ import { Header } from '@widgets/Header';
 import { Footer } from '@widgets/Footer';
 import '@shared/styles/globals.scss';
 import '@shared/styles/reset.scss';
+import { ThemeProvider } from '@app/providers';
 const geistSans = Geist({
   weight: ['400', '500', '600', '700', '800', '900'],
   variable: '--font-family',
@@ -22,7 +23,7 @@ export default function MainLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <link rel="icon" href="/favicon.svg" />
       <link
         rel="apple-touch-icon"
@@ -42,10 +43,11 @@ export default function MainLayout({
         href="/favicon-16x16.svg"
       />
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Header />
-
-        {children}
-        <Footer />
+        <ThemeProvider>
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

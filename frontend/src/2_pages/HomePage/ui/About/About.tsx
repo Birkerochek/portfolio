@@ -7,6 +7,7 @@ import type { aboutBlock } from '../../api/getPage';
 import styles from './About.module.scss';
 import Image from 'next/image';
 import { getImageUrl } from '@shared/utils/getImageUrl';
+import { useThemeStore } from '@shared/lib';
 
 type AboutData = aboutBlock & { skillCategories: SkillCategory[] };
 
@@ -25,7 +26,7 @@ export const About = ({ aboutData }: AboutProps) => {
   } = aboutData;
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-
+  const theme = useThemeStore((state) => state.theme);
   return (
     <Container >
       <motion.div
@@ -131,6 +132,7 @@ export const About = ({ aboutData }: AboutProps) => {
                   <Typography
                     variant="body"
                     className={styles.keySkills__skill_title}
+                    color={theme === 'dark' ? 'white' : 'black'}
                   >
                     {skillCategory.title}
                   </Typography>
