@@ -12,7 +12,7 @@
   @include adaptiv-font(20, 18);
 }
 .hero {
-  min-height: calc(100vh);
+  min-height: 100dvh;
   position: relative;
   display: flex;
   align-items: center;
@@ -134,7 +134,7 @@
     align-items: center;
     // @include adaptive-property(margin-bottom, 10px, 30px);
       @media (max-width: 420px){
-        margin-bottom: 30px;
+        margin-bottom: 25px;
       }
 
     transform: translateX(-50%);
