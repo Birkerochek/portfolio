@@ -5,11 +5,6 @@ import { useThemeStore } from '@shared/lib/useThemeStore';
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const theme = useThemeStore((state) => state.theme);
-  const initFromSystem = useThemeStore((state) => state.initFromSystem);
-
-  useEffect(() => {
-    initFromSystem();
-  }, [initFromSystem]);
 
   useEffect(() => {
     const root = document.documentElement;

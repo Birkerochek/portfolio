@@ -7,7 +7,6 @@ type ThemeState = {
   theme: Theme;
   setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
-  initFromSystem: () => void;
 };
 
 export const useThemeStore = create<ThemeState>()(
@@ -17,15 +16,6 @@ export const useThemeStore = create<ThemeState>()(
       setTheme: (theme) => set({ theme }),
       toggleTheme: () =>
         set({ theme: get().theme === 'dark' ? 'light' : 'dark' }),
-      initFromSystem: () => {
-        if (typeof window === 'undefined') return;
-        const stored = localStorage.getItem('theme');
-        if (stored) return;
-        const prefersDark = window.matchMedia(
-          '(prefers-color-scheme: dark)'
-        ).matches;
-        set({ theme: prefersDark ? 'dark' : 'light' });
-      },
     }),
     {
       name: 'theme',
